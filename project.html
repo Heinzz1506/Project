@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Project - Final Project</title>
+    
+    <style>
+        /* Base styles (Mobile View / Default) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #FFF2A0; /* Soft Cream */
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #B93636; /* Crimson Red */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Content box / Div */
+        .content-box {
+            background: #ffffff;
+            border: 2px solid #7D9C65; /* Sage Green Border */
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            
+            /* Mobile default: 1 horizontal div layout (full width stacking) */
+            width: 100%;
+            box-sizing: border-box;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .content-box h2 {
+            color: #7D9C65; /* Sage Green */
+        }
+
+        .content-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        /* Query #1: Tablet View at 772px */
+        @media screen and (min-width: 772px) {
+            .content-box {
+                width: 45%; /* Divs are 45% of viewport width */
+                margin-right: 2%;
+                margin-left: 2%;
+            }
+
+            .content-box img {
+                max-height: 30vh; /* Images are no more than 30% of viewport height */
+                object-fit: cover;
+            }
+        }
+
+        /* Query #2: Large Screen View at 998px */
+        @media screen and (min-width: 998px) {
+            .content-box {
+                width: 30%; /* Divs are 30% of viewport width */
+                margin-right: 1.5%;
+                margin-left: 1.5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Responsive Layout Project</h1>
+        <p style="text-align: center; color: #B93636; font-weight: bold;">Resize your browser window to test Mobile, Tablet (772px), and Large Screen (998px) views.</p>
+
+        <!-- Div 1 -->
+        <div class="content-box">
+            <h2>Card One</h2>
+            <img src="https://placehold.co/600x400/7D9C65/ffffff?text=Sage+Green" alt="Sample 1" onerror="this.src='https://placehold.co/600x400/ccc/fff?text=Image'">
+            <p>This is the first content box demonstrating responsive width adjustments across breakpoints.</p>
+        </div>
+
+        <!-- Div 2 -->
+        <div class="content-box">
+            <h2>Card Two</h2>
+            <img src="https://placehold.co/600x400/FF9C4C/ffffff?text=Vibrant+Orange" alt="Sample 2" onerror="this.src='https://placehold.co/600x400/ccc/fff?text=Image'">
+            <p>This is the second content box that shifts from single stack to multi-column layout.</p>
+        </div>
+
+        <!-- Div 3 -->
+        <div class="content-box">
+            <h2>Card Three</h2>
+            <img src="https://placehold.co/600x400/B93636/ffffff?text=Crimson+Red" alt="Sample 3" onerror="this.src='https://placehold.co/600x400/ccc/fff?text=Image'">
+            <p>This is the third content box appearing side-by-side on tablet and large screens.</p>
+        </div>
+    </div>
+
+</body>
+</html>
